@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Filter phía Server";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{ 
+    var positions = (List<Model.Entity.Position>) ViewBag.Positions;
+    var userTypes = (List<Model.Entity.UserType>) ViewBag.UserTypes;
+}
+@section jsfooter{
+    <script src="/assets/js/server/controller/userController.js"></script>
+}
+
+    <div id="content" class="container-fluid">
+        <div class="row justify-content-md-center">
+            <div class="col-lg-10">
+                <table id="user-list" class="table table-bordered table-striped" style="width:100%;" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Tên đầy đủ</th>
+                            <th>Tên đăng nhập</th>
+                            <th>Mã nhân viên</th>
+                            <th>Chức vụ</th>
+                            <th>Cơ sở/Phòng/Team</th>
+                            <th>Loại User</th>
+                            <th>Trạng thái hoạt động</th>
+                            <th>Commands</th>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <td><input type="text" name="FullName" value="" placeholder="Search" class="form-control selected-change" /></td>
+                            <td><input type="text" name="UserName" value="" placeholder="Search" class="form-control selected-change" /></td>
+                            <td><input type="text" name="UserCode" value="" placeholder="Search" class="form-control selected-change" /></td>
+                            <td>
+                                <select class="form-control selected-change" name="Position">
+                                    <option value="0">...</option>
+                                    @foreach (var item in positions)
+                                    {
+                                        <option value="@item.ID">@item.Name</option>
+                                    }
+                                </select>
+                            </td>
+                            <td><input type="text" name="Team" value="" placeholder="Search" class="form-control selected-change" /></td>
+                            <td>
+                                <select class="form-control selected-change" name="UserType">
+                                    <option value="0">...</option>
+                                    @foreach (var item in userTypes)
+                                    {
+                                        <option value="@item.ID">@item.Name</option>
+                                    }
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control selected-change" name="Status">
+                                    <option value="0">...</option>
+                                    <option value="1" style="color:green;">Active</option>
+                                    <option value="2" style="color:red;">Inactive</option>
+                                </select>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </thead>
+                    <tbody class="list-user">
+                        
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+    </div>
+
