@@ -127,7 +127,8 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\FilterClientController.cs" />
+    <Compile Include="Controllers\FilterServerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -135,8 +136,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\js\client\userController.js" />
+    <Content Include="assets\js\common.js" />
     <Content Include="assets\js\script.js" />
-    <Content Include="assets\js\server\controller\userController.js" />
+    <Content Include="assets\js\server\userController.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -168,12 +171,11 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\User\IndexClient.cshtml" />
-    <Content Include="Views\User\IndexServer.cshtml" />
+    <Content Include="Views\FilterServer\Index.cshtml" />
+    <Content Include="Views\FilterClient\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="assets\js\client\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

@@ -8,10 +8,10 @@ using System.Web.Mvc;
 
 namespace UserList.Controllers
 {
-    public class UserController : Controller
+    public class FilterServerController : Controller
     {
-        // GET: User
-        public ActionResult IndexServer()
+        // GET: FilterServer
+        public ActionResult Index()
         {
             PositionDao pDao = new PositionDao();
             UserTypeDao utDao = new UserTypeDao();
@@ -21,11 +21,11 @@ namespace UserList.Controllers
             return View();
         }
 
-        public JsonResult FilterUser(
-            string fullName = null, 
-            string userName = null, 
-            string userCode = null, 
-            int positionID = 0, 
+        public JsonResult GetUser(
+            string fullName = null,
+            string userName = null,
+            string userCode = null,
+            int positionID = 0,
             string team = null,
             int userTypeID = 0,
             bool status = true)
@@ -33,11 +33,6 @@ namespace UserList.Controllers
             UserDao dao = new UserDao();
             List<UserModel> listUser = dao.GetListUser(fullName, userName, userCode, positionID, team, userTypeID, status);
             return Json(new { data = listUser }, JsonRequestBehavior.AllowGet);
-        }
-
-        public ActionResult IndexClient()
-        {
-            return View();
         }
     }
 }

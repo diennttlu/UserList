@@ -16,7 +16,7 @@ namespace UserList
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "User", action = "IndexServer", id = UrlParameter.Optional }
+                defaults: new { controller = "FilterServer", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

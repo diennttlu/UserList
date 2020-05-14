@@ -39,27 +39,27 @@ namespace Model.Dao
             {
                 data = from u in data where u.FullName.Contains(fullName) select u;
             }
-            else if (!String.IsNullOrEmpty(userName))
+            if (!String.IsNullOrEmpty(userName))
             {
                 data = from u in data where u.UserName.Contains(userName) select u;
             }
-            else if (!String.IsNullOrEmpty(userCode))
+            if (!String.IsNullOrEmpty(userCode))
             {
                 data = from u in data where u.UserCode.Contains(userCode) select u;
             }
-            else if (positionID != 0)
+            if (positionID != 0)
             {
                 data = from u in data where u.PositionID == positionID select u;
             }
-            else if (!String.IsNullOrEmpty(team))
+            if (!String.IsNullOrEmpty(team))
             {
                 data = from u in data where u.Team.Contains(team) select u;
             }
-            else if (userTypeID != 0)
+            if (userTypeID != 0)
             {
                 data = from u in data where u.UserTypeID == userTypeID select u;
             }
-            else
+            if (status == false) 
             {
                 data = from u in data where u.Status == status select u;
             }
