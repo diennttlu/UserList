@@ -8,6 +8,7 @@
 }
 @section jsfooter{
     <script src="/assets/js/server/controller/userController.js"></script>
+   
 }
 
     <div id="content" class="container-fluid">
@@ -19,9 +20,9 @@
                             <th>Tên đầy đủ</th>
                             <th>Tên đăng nhập</th>
                             <th>Mã nhân viên</th>
-                            <th>Chức vụ</th>
+                            <th style="width:110px">Chức vụ</th>
                             <th>Cơ sở/Phòng/Team</th>
-                            <th>Loại User</th>
+                            <th style="width:150px">Loại User</th>
                             <th>Trạng thái hoạt động</th>
                             <th>Commands</th>
                         </tr>
@@ -53,8 +54,8 @@
                             <td>
                                 <select class="form-control selected-change" name="Status">
                                     <option value="0">...</option>
-                                    <option value="1" style="color:green;">Active</option>
-                                    <option value="2" style="color:red;">Inactive</option>
+                                    <option value="true" style="color:green;">Active</option>
+                                    <option value="false" style="color:red;">Inactive</option>
                                 </select>
                             </td>
                             <td></td>

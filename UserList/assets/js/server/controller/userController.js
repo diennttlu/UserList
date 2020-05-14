@@ -23,11 +23,11 @@
                 str += "<td>" + value.FullName + "</td>";
                 str += "<td>" + value.UserName + "</td>";
                 str += "<td>" + value.UserCode + "</td>";
-                str += "<td>" + value.PositionName + "</td>";
+                str += "<td style='width:110px'>" + value.PositionName + "</td>";
                 str += "<td>" + value.Team + "</td>";
-                str += "<td>" + value.UserTypeName + "</td>";
-                str += "<td>" + (value.Status ? "Active" : "Inactive") + "</td>";
-                str += "<td><a href='#' class='btn'>Edit</a></td>";
+                str += "<td style='width:150px'>" + value.UserTypeName + "</td>";
+                str += "<td style='color:" + (value.Status ? "Green" : "Red") +";'>" + (value.Status ? "Active" : "Inactive") + "</td>";
+                str += "<td><button class='btn'>Edit</button></td>";
                 str += "</tr>";
             });
             $(".list-user").html(str);
@@ -43,14 +43,17 @@ var user = {
 
     registerEvents: function () {
         $(document).on("change", ".selected-change", function () {
-            var fullName = $("input[name=FullName]").val();
-            var userName = $("input[name=UserName]").val();
-            var userCode = $("input[name=UserCode]").val();
-            var positionID = $("input[name=Position]").val();
+            var fullName = $("input[name='FullName']").val();
+            var userName = $("input[name='UserName']").val();
+            var userCode = $("input[name='UserCode']").val();
+            var positionID = $("select[name='Position']").val();
             var team = $("input[name=Team]").val();
-            var userTypeID = $("input[name=UserType]").val();
-            var status = $("input[name=Status]").val();
+            var userTypeID = $("select[name='UserType']").val();
+            var status = $("select[name='Status']").val();
+
             load(fullName, userName, userCode, positionID, team, userTypeID, status);
+
+            
         });
 
         load(null, null, null, 0, null, 0, true);
